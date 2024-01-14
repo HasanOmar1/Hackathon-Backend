@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRouter from "./routes/userRoutes.js";
 import connectDB from "./config/db.js";
-import errorHandler from "./middlewares/errorMiddleWare.js";
+import errorHandler from "./middlewares/errorMiddleware.js";
 import OpenAI from "openai";
 
 import functionCalling from "./openAI/functionCalling.js";
