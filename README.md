@@ -1,2 +1,1 @@
 # Hackathon BACKEND
-# Hackathon-Backend
