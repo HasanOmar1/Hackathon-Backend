@@ -60,34 +60,6 @@ app.use(errorHandler); // Error handler middleware <
 
 const PORT = process.env.PORT || 3000; // takes port from .env or just put 3000
 
-// app.post("/generate-text", async (req, res) => {
-//   const prompt = req.body.prompt;
-//   const configuration = {
-//     organization: process.env.ORG_API_KEY,
-//     apiKey: process.env.TEAM_API_KEY,
-//   };
-//   const openai = new OpenAI(configuration);
-
-//   try {
-//     const completion = await openai.completions.create({
-//       // gpt-3.5-turbo-instruct
-//       model: "gpt-3.5-turbo-instruct",
-//       prompt: prompt,
-//       max_tokens: 500,
-//       temperature: 1,
-//       // stop: ":",
-//       // presence_penalty: 2,
-//       // seed: 42,
-//       n: 2,
-//     });
-
-//     const text = completion.choices[0].text;
-//     res.send(text);
-//   } catch (error) {
-//     res.status(500).send("Error generating text");
-//   }
-// });
-
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
