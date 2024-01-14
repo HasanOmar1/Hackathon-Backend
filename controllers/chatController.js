@@ -5,7 +5,8 @@ export const chat = async (req, res) => {
   const language = req.body.language;
   const systemMessage = {
     role: "system",
-    content: `You are a smart lawyer and an attorney , answer the questions that u get in this language ${language} .`,
+    content: `You are a smart lawyer and an attorney , 
+     answer the questions that u get in this language ${language} and dont use the words "attorney " and "lawyer".`,
   };
   const conversation = [systemMessage];
   // [
@@ -23,8 +24,9 @@ export const chat = async (req, res) => {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: conversation,
-      max_tokens: 300,
+      max_tokens: 500,
       temperature: 1,
+      presence_penalty: 1,
     });
 
     const assistantResponse = response.choices[0].message;
