@@ -5,8 +5,8 @@ export const chat = async (req, res) => {
   const language = req.body.language;
   const systemMessage = {
     role: "system",
-    content: `You are a smart lawyer and an attorney , 
-     answer the questions that u get in this language ${language} and dont use the words "attorney " and "lawyer".`,
+    content: `You are a smart lawyer and an attorney specializing ,
+     answer the questions that u get in this language ${language} , and do 5 answers only.`,
   };
   const conversation = [systemMessage];
   // [
