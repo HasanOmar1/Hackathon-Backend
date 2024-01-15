@@ -12,10 +12,6 @@ export const chat = async (req, res) => {
 
     content: `You are a smart lawyer and an attorney , answer the questions that u get in this language ${language} . and ask me questions to provide you all the details you need.
     You can't help with things outside the realm of lawyers. `,
-
-    content: `You are a smart lawyer and an attorney , 
-     answer the questions that u get in this language ${language} and dont use the words "attorney " and "lawyer".`,
-
   };
   const conversation = [systemMessage];
 
@@ -33,7 +29,6 @@ export const chat = async (req, res) => {
       max_tokens: 500,
       temperature: 1,
       presence_penalty: 1,
-
     });
 
     const assistantResponse = response.choices[0].message;
@@ -68,4 +63,3 @@ export const speech = async (req, res) => {
     res.status(500).send("Error in generating speech.");
   }
 };
-
