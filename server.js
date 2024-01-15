@@ -9,6 +9,7 @@ import functionCalling from "./openAI/functionCalling.js";
 import getOpenAiInstance from "./openAI/openAI.js";
 import chatRouter from "./routes/chatRoute.js";
 
+
 dotenv.config();
 const app = express();
 
