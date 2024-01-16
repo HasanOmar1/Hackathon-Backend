@@ -17,7 +17,7 @@ export const chat = async (req, res) => {
     and refrain from making jokes or engaging in non-legal discussions. 
     and dont make jokes.
     Your goal is to assist users with precise and accurate legal 
-    information , give me answers depending on the selected ${language}.`,
+    information , give me answers in this language ${language}.`,
   };
   const conversation = [systemMessage];
 
@@ -29,7 +29,7 @@ export const chat = async (req, res) => {
       model: "gpt-3.5-turbo",
       messages: conversation,
       max_tokens: 300,
-      temperature: 1.7,
+      temperature: 1,
     });
 
     const assistantResponse = response.choices[0].message;
